@@ -1,0 +1,14 @@
+{% extends "coderedcms/pages/base.html" %}
+{% load static %}
+
+{% block custom_assets %}
+{# Add your custom CSS here #}
+<link rel="stylesheet" href="{% static 'website/css/custom.css' %}">
+{% comment %} <link rel="stylesheet" href="{% static 'website/css/main.css' %}"> {% endcomment %}
+{% endblock %}
+
+{% block custom_scripts %}
+{# Add your custom JavaScript here, or delete the line below if you don't need any #}
+<script src="{% static 'website/js/custom.js' %}"></script>
+{% comment %} <script src="{% static 'website/js/main.js' %}"></script> {% endcomment %}
+{% endblock %}

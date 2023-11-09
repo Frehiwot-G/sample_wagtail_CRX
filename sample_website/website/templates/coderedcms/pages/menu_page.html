@@ -1,0 +1,33 @@
+{% extends "coderedcms/pages/web_page.html" %}
+{% load wagtailcore_tags wagtailimages_tags coderedcms_tags %}
+
+{% block index_content %}
+<div id="slider">
+    <ul id="slideWrap"> 
+        {% if page.photo %}
+        {% image page.photo fill-1000x600 as menu %}
+            <li><img src="{{menu.url}}" alt="photo of {{page.description}}"></li>
+        {% endif %}
+    </ul>
+    <a id="prev" href="#">&#8810;</a>
+    <a id="next" href="#">&#8811;</a>
+</div>
+
+
+
+{% comment %} <div class="block-row">
+    <div class="container-fluid">
+        <div class="row m-4">
+            <div class="col-lg-6">
+                {% if page.photo %}
+                {% image page.photo fill-300x300 as menu %}
+                <div class="text-center">
+                    <img class="border-cherry" src="{{menu.url}}" alt="photo of {{menu.description}}">
+                </div>
+                {% endif %}
+            </div>
+            </div>
+        </div>
+    </div>
+</div> {% endcomment %}
+{% endblock %}
