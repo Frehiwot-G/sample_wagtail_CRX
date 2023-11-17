@@ -1,0 +1,27 @@
+{% extends "coderedcms/pages/web_page_notitle.html" %}
+{% load wagtailimages_tags %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+{%block content%}
+<div id="slider">
+    <ul id="slideWrap"> 
+        <li>
+            <img src="/media/original_images/3dsample.jpg" alt="Image">
+            <div class="centered">Beakery Sample Website</div>
+        </li>
+        <li>
+            <img src="/media/original_images/3dsample_2.jpg" alt="Image">
+            <div class="centered">Using Wagtail CRX</div>
+        </li>
+        <li>
+            <img src="/media/original_images/3dsample_3.jpg" alt="Image">
+            <div class="centered">Demo Site</div>
+        </li> 
+    </ul>
+
+    <a id="prev" href="#">&#8810;</a>
+    <a id="next" href="#">&#8811;</a>
+</div>
+
+{%endblock%}

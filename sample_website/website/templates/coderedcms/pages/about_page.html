@@ -1,0 +1,14 @@
+{% extends "coderedcms/pages/web_page.html" %}
+{% load wagtailcore_tags wagtailimages_tags coderedcms_tags %}
+
+{% block index_content %}
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
+rel="stylesheet">
+<div class="container-fluid">
+    <div class="row m-4">
+        <div class="col-lg-6">
+                <p class="tm-list-item-description">{{page.description|richtext}}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

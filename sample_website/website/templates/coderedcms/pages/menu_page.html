@@ -1,33 +1,55 @@
 {% extends "coderedcms/pages/web_page.html" %}
 {% load wagtailcore_tags wagtailimages_tags coderedcms_tags %}
 
+
 {% block index_content %}
-<div id="slider">
-    <ul id="slideWrap"> 
-        {% if page.photo %}
-        {% image page.photo fill-1000x600 as menu %}
-            <li><img src="{{menu.url}}" alt="photo of {{page.description}}"></li>
-        {% endif %}
-    </ul>
-    <a id="prev" href="#">&#8810;</a>
-    <a id="next" href="#">&#8811;</a>
-</div>
-
-
-
-{% comment %} <div class="block-row">
-    <div class="container-fluid">
-        <div class="row m-4">
-            <div class="col-lg-6">
-                {% if page.photo %}
-                {% image page.photo fill-300x300 as menu %}
-                <div class="text-center">
-                    <img class="border-cherry" src="{{menu.url}}" alt="photo of {{menu.description}}">
-                </div>
-                {% endif %}
-            </div>
+    <div class="tm">
+        <div class="img_adjust">
+            {% if page.photo %}
+            {% image page.photo fill-500x500 as menu %}   
+            <img style="align-items:center;" src="{{menu.url}}" alt="photo of {{page.description}}" class="tm-list-item-img">  
+            {% endif %}
+        </div>
+        <div class="img_adjust">
+            <div class="tm-black-bg tm-mb-20 tm-about-box-1">  
+                <section class="about-section">        
+                    <div class="tm-list-item tm-list-item-2">   
+                            <div class="tm-list-item-text-2">
+                                    <p>{{page.description|richtext}}</p>
+                            </div>
+                    </div>
+                </section>
             </div>
         </div>
     </div>
-</div> {% endcomment %}
+
+
+    <footer class="text-center text-white" style="background-color: #0a4275;">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+          <!-- Section: CTA -->
+          <section class="">
+            {% comment %} <p class="d-flex justify-content-center align-items-center">
+              <span class="me-3">Register for free</span>
+              <button type="button" class="btn btn-outline-light btn-rounded">
+                Sign up!
+              </button>
+            </p> {% endcomment %}
+          </section>
+          <!-- Section: CTA -->
+        </div>
+        <!-- Grid container -->
+    
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            <p id="year">Copyright:</p>
+        <script>
+            var dt = new Date();
+            document.getElementById("year").innerHTML = "© " + dt.getFullYear() + " Copyright:";
+        </script>
+        </div>
+      </footer>
+
+
 {% endblock %}
+

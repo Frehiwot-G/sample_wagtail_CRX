@@ -93,6 +93,41 @@ class WebPage(CoderedWebPage):
     template = "coderedcms/pages/web_page.html"
 
 
+class AboutIndexPage(CoderedWebPage):
+    
+    class Meta:
+        verbose_name = "About Landing Page"
+    
+    index_query_pagemodel = 'website.AboutPage'
+
+    subpage_types = ['website.AboutPage']
+    
+    template = "coderedcms/pages/about_index_page.html"
+
+
+class AboutPage(CoderedWebPage):
+    
+    class Meta:
+        verbose_name = "about Page"
+
+    parent_page_types = ['website.AboutIndexPage']
+
+    template = "coderedcms/pages/about_page.html"
+    
+    description = RichTextField(
+        verbose_name="about discription",
+        null=True,
+        blank=True,
+        default=""
+    )
+    body_content_panels = CoderedWebPage.body_content_panels + [
+        #  FieldPanel("photo"),
+        # StreamFieldPanel("photo"),
+        FieldPanel("description"),
+    ]
+
+
+
 class MenuIndexPage(CoderedWebPage):
     """
     Landing page for menu

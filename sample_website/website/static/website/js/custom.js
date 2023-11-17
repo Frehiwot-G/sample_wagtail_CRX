@@ -105,3 +105,10 @@ var prevSlide = function() {
         window.onload = function() {
         responsiveSlider();  
         }
+
+
+
+
+
+
+

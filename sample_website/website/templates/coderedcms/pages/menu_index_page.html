@@ -1,22 +1,64 @@
 {% extends "coderedcms/pages/web_page.html" %}
 {% load wagtailcore_tags wagtailimages_tags coderedcms_tags %}
 
-
 {% block index_content %}
-
-    {% comment %} {% for menu in page.get_children.specific %} {% endcomment %}
-        <div id="slider">
-            <ul id="slideWrap"> 
-                {% for menu in page.get_children.specific %}
-                    {% if menu.photo %}
-                    {% image menu.photo fill-1000x600 as menu_photo %}
-                        <li><img src="{{menu_photo.url}}" alt="{{menu.title}}"></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <a id="prev" href="#">&#8810;</a>
-            <a id="next" href="#">&#8811;</a>
+<div class="tm-container">
+    <div class="tm-row">
+        <div class="tm-right">
+            <main class="tm-main">
+            <div id="drink" class="tm-page-content">
+                <div id="cold" class="tm-tab-content">      
+                    <div class="tm-list">
+                        {% for menu in page.get_children.specific %}
+                            {% if menu.photo %}
+                            <section class="about-section">  
+                                <div class="tm-list-item">  
+                                    {% image menu.photo fill-1000x600 as menu_photo %}
+                                    <img src="{{menu_photo.url}}" alt="{{menu.description}}" class="tm-list-item-img">
+                                    {% comment %} <img src="img/iced-americano.png" alt="Image" class="tm-list-item-img"> {% endcomment %}
+                                    <div class="tm-list-item-text"> 
+                                        {% comment %} <h3 class="tm-list-item-name">Iced Americano<span class="tm-list-item-price">$10.25</span></h3> {% endcomment %}
+                                        <p class="tm-list-item-description">{{menu.title|richtext}}</p>
+                                    </div> 
+                                    <button type="button" class="btn btn-outline-success"><a href="{% pageurl menu %}">Read More</a></button>
+                                </div>
+                            </section> 
+                            {% endif %} 
+                        {% endfor %} 
+                    </div>
+                </div>
+            </main>
         </div>
-    {% comment %} {% endfor %} {% endcomment %}
+    </div> 
+</div> 
+
+{% comment %} footer {% endcomment %}
+<footer class="text-center text-white" style="background-color: #0a4275;">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: CTA -->
+      <section class="">
+        {% comment %} <p class="d-flex justify-content-center align-items-center">
+          <span class="me-3">Register for free</span>
+          <button type="button" class="btn btn-outline-light btn-rounded">
+            Sign up!
+          </button>
+        </p> {% endcomment %}
+      </section>
+      <!-- Section: CTA -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        <p id="year">Copyright:</p>
+    <script>
+        var dt = new Date();
+        document.getElementById("year").innerHTML = "© " + dt.getFullYear() + " Copyright:";
+    </script>
+    </div>
+  </footer>
 
 {% endblock %}
+
+
