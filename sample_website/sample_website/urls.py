@@ -7,7 +7,7 @@ from coderedcms import search_urls as crx_search_urls
 from coderedcms import urls as crx_urls
 
 urlpatterns = [
-    # Admin
+    # Admin                  
     path("django-admin/", admin.site.urls),
     path("admin/", include(crx_admin_urls)),
     # Documents

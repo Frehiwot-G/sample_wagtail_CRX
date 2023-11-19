@@ -103,8 +103,8 @@ class AboutIndexPage(CoderedWebPage):
     subpage_types = ['website.AboutPage']
     
     template = "coderedcms/pages/about_index_page.html"
-
-
+                                    
+         
 class AboutPage(CoderedWebPage):
     
     class Meta:

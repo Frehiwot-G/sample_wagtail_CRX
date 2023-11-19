@@ -42,7 +42,7 @@
         {% endfor %}
         <button class="btn btn-outline-primary ms-2" type="submit">{% trans "Search" %}</button>
       </form>
-      
+
       <button class="btn btn-link">
         <a href="#" class="pe-auto">
           <ul class="snipcart-checkout btn-primary nav-link navbar-nav {{navbar.custom_css_class}}" {% if navbar.custom_id %}id="{{navbar.custom_id}}" {% endif %}>
@@ -52,7 +52,7 @@
             {% for item in navbar.menu_items %}
             {% endfor %}
           </ul>
-        </a>
+        </a>      
       </button>
       
       {% endif %}
@@ -69,4 +69,4 @@
 <div class="{{settings.coderedcms.LayoutSettings.navbar_format}}-fixed-offset {{settings.coderedcms.LayoutSettings.navbar_collapse_mode}}"></div>
 {% endif %}
 {% endif %}
-{% endblock %}
+{% endblock %}        

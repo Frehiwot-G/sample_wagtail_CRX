@@ -45,7 +45,7 @@ var prevSlide = function() {
   setInterval(function() {
     nextSlide()
   }, 2000);  
-//   slides every 2sec
+//   slides every 2seconds.
   window.onload = function() {
     responsiveSlider();  
     }
