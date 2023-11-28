@@ -7,7 +7,8 @@ DEBUG = False
 SECRET_KEY = "@g-18o$qma#-xkgetq85ysiz=6d2$0!gndp_(@czey1t6@aqf*"
 
 # Add your site's domain name(s) here.
-ALLOWED_HOSTS = ["www.sample_slider.com"]
+# ALLOWED_HOSTS = ["www.sample_slider.com"]
+ALLOWED_HOSTS = ["2two.uk", "65.21.144.205"]
 ROOT_URLCONF= "sample_website.urls"
 # ALLOWED_HOSTS = ["localhost"]
 
