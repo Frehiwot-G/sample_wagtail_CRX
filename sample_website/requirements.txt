@@ -1,2 +1,7 @@
 coderedcms==2.1.*
 wagtail==4.2.*
+gunicorn==20.1.0
+wagtailfontawesome
+polib==1.2.0
+wagtail-localize==1.5.1
+django-environ==0.11.2
